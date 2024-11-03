@@ -1,20 +1,13 @@
-// ImageModal.tsx
 import Modal from "react-modal";
 import css from "./ImageModal.module.css";
+import { SelectedImageData } from "../App/App";
 
 Modal.setAppElement("#root");
 
 interface ImageModalProps {
   isOpen: boolean;
   onRequestClose: () => void;
-  imageData: {
-    regular: string;
-    alt: string;
-    likes: number;
-    user: {
-      name: string;
-    };
-  };
+  imageData: SelectedImageData;
 }
 
 export default function ImageModal({

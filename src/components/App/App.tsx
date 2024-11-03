@@ -8,7 +8,7 @@ import ImageModal from "../ImageModal/ImageModal";
 import { fetchImages, ImageData } from "../api-service";
 import css from "./App.module.css";
 
-interface SelectedImageData {
+export interface SelectedImageData {
   regular: string;
   alt: string;
   likes: number;

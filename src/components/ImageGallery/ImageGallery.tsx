@@ -1,31 +1,17 @@
-
 import ImageCard from "../ImageCard/ImageCard";
 import css from "./ImageGallery.module.css";
+import { ImageData } from "../api-service";
+import { SelectedImageData } from "../App/App";
 
 interface ImageGalleryProps {
-  images: {
-    id: string;
-    urls: {
-      small: string;
-      regular: string;
-    };
-    alt_description: string | null;
-    likes: number;
-    user: {
-      name: string;
-    };
-  }[];
-  onImageClick: (imageData: {
-    regular: string;
-    alt: string;
-    likes: number;
-    user: {
-      name: string;
-    };
-  }) => void;
+  images: ImageData[];
+  onImageClick: (imageData: SelectedImageData) => void;
 }
 
-export default function ImageGallery({ images, onImageClick }: ImageGalleryProps) {
+export default function ImageGallery({
+  images,
+  onImageClick,
+}: ImageGalleryProps) {
   return (
     <ul className={css.gallery}>
       {images.map((image) => (
